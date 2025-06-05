@@ -14,6 +14,7 @@ With the software development industry changing and evolving everyday at a rapid
 - `Firestore` – Acting as the cloud-hosted NoSQL database for storing and syncing user data, news updates, and developer interactions in real-time. It supports scalability and low-latency access to data across users and devices.
 
 **Landing Page**
+This is the landing page that users will enter once starting the platform.
 ![DevPlane Landing Page](https://github.com/user-attachments/assets/86261cad-9911-49d0-a44d-ca7ada89177a)
 
 **Next I will provide the sign up and sign in functionality for the application. More updates will follow soon!**
