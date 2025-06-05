@@ -9,7 +9,7 @@ With the software development industry changing and evolving everyday at a rapid
 - `React.js` – Powers the interactive user interface with reusable, modular components. Used within the Next.js framework, it enables dynamic features like user dashboards, personalized feeds, and real-time updates, enhancing the responsiveness of the platform.
 - `TypeScript` –  Going to add strong static typing to the JavaScript codebase, improving code reliability, maintainability, and developer productivity. It reduces runtime errors and enables better tooling support during development.
 - `Node.js` –  Supporting backend logic and server-side APIs that handle user authentication, data processing, and interactions with Firebase services. It ensures scalability and performance for server operations.
-- 'TensorFlow' -Integrating machine learning capabilities into the application, enabling personalized content recommendations, trend predictions, and AI-driven developer insights that keep users informed and engaged.
+- `TensorFlow` -Integrating machine learning capabilities into the application, enabling personalized content recommendations, trend predictions, and AI-driven developer insights that keep users informed and engaged.
 - `Firebase` – Providing backend infrastructure including authentication, hosting, and cloud functions. It simplifies user management (sign-up/sign-in) and ensures secure access to platform features.
 - `Firestore` – Acting as the cloud-hosted NoSQL database for storing and syncing user data, news updates, and developer interactions in real-time. It supports scalability and low-latency access to data across users and devices.
 
