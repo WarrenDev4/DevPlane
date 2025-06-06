@@ -16,7 +16,7 @@ With the software development industry changing and evolving everyday at a rapid
 **Landing Page**
 
 This is the landing page that users will enter once starting the platform.
-![DevPlane Landing Page](https://github.com/user-attachments/assets/86261cad-9911-49d0-a44d-ca7ada89177a)
+![DevPlane Landing Page](https://github.com/user-attachments/assets/605da323-b676-4922-8f68-0a12db20f9e3)
 
 **Next I will provide the sign up and sign in functionality for the application. More updates will follow soon!**
 
