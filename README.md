@@ -18,6 +18,15 @@ With the software development industry changing and evolving everyday at a rapid
 This is the landing page that users will enter once starting the platform.
 ![DevPlane Landing Page](https://github.com/user-attachments/assets/605da323-b676-4922-8f68-0a12db20f9e3)
 
-**Next I will provide the sign up and sign in functionality for the application. More updates will follow soon!**
+**Sign Up and Login (I'm still working on adding database and authentation logic with Firebase and Firestore)**
+
+This is where users can sign up for DevPlane.
+![DevPlane Sign Up](https://github.com/user-attachments/assets/ca9ae2ef-11e7-4aaf-aec6-14afe83ac94d)
+
+This where users can login into their pages.
+![DevPlane Sign In](https://github.com/user-attachments/assets/88143694-1e07-4152-82e6-03094d729f8a)
+
+
+**Next I will add the sign up and sign in authentication functionality for the application with Firebase and Firestore. Stay tuned!**
 
 
