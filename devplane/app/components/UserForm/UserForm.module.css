@@ -1,0 +1,123 @@
+.authContainer {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.leftPanel {
+  flex: 1;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rightPanel {
+  flex: 1;
+  background-image: url('../../../public/DevPlane Page.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.formWrapper {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+}
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 10%;
+  transform: translateX(-50%);
+  height: 55px;
+  width: 245px;
+  z-index: 1;
+}
+
+.h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form label {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  color: rgb(3, 103, 243);
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form input {
+  padding: 18px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+  outline: none;
+}
+
+.form button {
+  background-color: #097fed;
+  color: white;
+  border: none;
+  padding: 18px;
+  border-radius: 3px;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form button:hover {
+  background-color:  #094a88;
+}
+
+.signText {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 36px;
+  color: #000000;
+  text-align: center;
+}
+
+.footerText {
+  text-align: center;
+  font-size: 14px;
+  color: #151515;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footerText a {
+  transition: all 0.3s ease;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.footerText a:hover {
+  text-decoration: underline;
+}
+
+.fade {
+  opacity: 1;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}

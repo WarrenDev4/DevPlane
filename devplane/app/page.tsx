@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import React from 'react';
+import Link from 'next/link';
 import './styles/landing.css';
 
 export default function LandingPage() {
@@ -12,8 +13,8 @@ export default function LandingPage() {
         <div className="logo-nav">
           <Image src="/DevPlane Logo.png" alt="Logo" width={220} height={60} />
           <nav className="nav">
-            <a href="/login" className="login-button">Login</a>
-            <a href="/signup" className="signup-button">Sign Up</a>
+            <Link href="/login" className="login-button">Login</Link>
+            <Link href="/signup" className="signup-button">Sign Up</Link>
           </nav>
         </div>
       </header>
