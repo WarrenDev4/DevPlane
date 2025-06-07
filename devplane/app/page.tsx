@@ -11,7 +11,7 @@ export default function LandingPage() {
       {/* Header Bar */}
       <header className="header">
         <div className="logo-nav">
-          <Image src="/DevPlane Logo.png" alt="Logo" width={220} height={60} />
+          <a href="/"><Image src="/DevPlane Logo.png" alt="Logo" width={220} height={60} /></a>
           <nav className="nav">
             <Link href="/login" className="login-button">Login</Link>
             <Link href="/signup" className="signup-button">Sign Up</Link>
@@ -23,9 +23,9 @@ export default function LandingPage() {
       <section className="hero">
         <div className="overlay">
           <div className="hero-text">
-            <h1>Empowering developers to be the best they can be.</h1>
-            <p>Stay ahead with the latest in tech and development and connect with other developers with DevPlane.</p>
-            <a href="/explore" className="explore-button">Explore Now</a>
+            <h1 className="fade-in-up" style={{ animationDelay: '0.2s' }}>Empowering developers to be the best they can be.</h1>
+            <p className="fade-in-up" style={{ animationDelay: '0.4s' }}>Stay ahead with the latest in tech and development and connect with other developers with DevPlane.</p>
+            <Link href="/main-page" className="fade-in-up explore-button" style={{ animationDelay: '0.6s' }}>Explore Now</Link>
           </div>
         </div>
       </section>
