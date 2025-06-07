@@ -19,6 +19,9 @@
   background-image: url('../../../public/DevPlane Page.jpg');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .formWrapper {
@@ -120,4 +123,17 @@
     opacity: 1;
     transform: translateY(0px);
   }
+}
+
+.inputField {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+}
+
+.inputField:hover {
+  border-color: #00aaff; 
+  box-shadow: 0 0 5px rgba(0, 170, 255, 0.5); 
 }
