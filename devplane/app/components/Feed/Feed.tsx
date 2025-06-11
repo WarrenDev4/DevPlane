@@ -6,6 +6,7 @@ const testArticles = [
     id: 1,
     title: 'New Features in React 19',
     author: 'Jane Doe',
+    source: 'reactjs.org',
     thumbnail: '/DevPlane Background.png',
     url: '#',
   },
@@ -13,6 +14,7 @@ const testArticles = [
     id: 2,
     title: 'AI Tools Every Developer Should Know',
     author: 'John Smith',
+    source: 'openai.com',
     thumbnail: '/DevPlane Background.png',
     url: '#',
   },
@@ -20,6 +22,7 @@ const testArticles = [
     id: 3,
     title: 'The Rise of Edge Functions',
     author: 'Alex Green',
+    source: 'vercel.com',
     thumbnail: '/DevPlane Background.png',
     url: '#',
   },
@@ -27,6 +30,7 @@ const testArticles = [
     id: 4,
     title: 'Next.js App Router Best Practices',
     author: 'Dev Guru',
+    source: 'nextjs.org',
     thumbnail: '/DevPlane Background.png',
     url: '#',
   },
@@ -34,6 +38,7 @@ const testArticles = [
     id: 5,
     title: '10 Tips for Clean JavaScript Code',
     author: 'Code Master',
+    source: 'javascriptweekly.com',
     thumbnail: '/DevPlane Background.png',
     url: '#',
   },
@@ -41,6 +46,7 @@ const testArticles = [
     id: 6,
     title: 'What’s New in TypeScript 5',
     author: 'TS Wizard',
+    source: 'typescriptlang.org',
     thumbnail: '/DevPlane Background.png',
     url: '#',
   },
@@ -48,6 +54,7 @@ const testArticles = [
     id: 7,
     title: 'Deploying AI Apps with Vercel + TF.js',
     author: 'AI Dev',
+    source: 'tensorflow.org',
     thumbnail: '/DevPlane Background.png',
     url: '#',
   },
@@ -55,6 +62,7 @@ const testArticles = [
     id: 8,
     title: 'Understanding Async/Await in 2025',
     author: 'Modern Dev',
+    source: 'dev.to',
     thumbnail: '/DevPlane Background.png',
     url: '#',
   },
@@ -62,10 +70,12 @@ const testArticles = [
     id: 9,
     title: 'Getting Started with React Server Components',
     author: 'Frontend Pro',
+    source: 'reactjs.org',
     thumbnail: '/DevPlane Background.png',
     url: '#',
   },
 ];
+
 
 export default function Feed() {
   return (
@@ -88,6 +98,7 @@ export default function Feed() {
           <div className={styles.cardContent}>
             <h3>{article.title}</h3>
             <p>{article.author}</p>
+            <span className={styles.source}>{article.source}</span>
           </div>
         </a>
       ))}

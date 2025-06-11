@@ -1,7 +1,7 @@
 import styles from './AppCard.module.css';
 import Sidebar from '../Sidebar/Sidebar';
 import NewsFeed from '../Feed/Feed';
-import Updates from '../Updates/Updates';
+import Updates from '../QuickFeed/QuickFeed';
 
 export default function AppCard() {
   return (
