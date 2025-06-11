@@ -29,6 +29,6 @@ This is where users can sign up for DevPlane.
 **DevPlane Home Page**
 ![DevPlane Home Page](https://github.com/user-attachments/assets/a0a4f0c7-09bc-41a6-b926-647e7164f06d)
 
-**Stay tuned for more! 🚀**
+**Stay tuned for more updates! 🚀**
 
 
