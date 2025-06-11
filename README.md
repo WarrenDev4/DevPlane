@@ -27,6 +27,6 @@ This where users can login into their pages.
 ![DevPlane Sign In](https://github.com/user-attachments/assets/88143694-1e07-4152-82e6-03094d729f8a)
 
 
-**Next I will add the sign up and sign in authentication functionality for the application with Firebase and Firestore. Stay tuned!**
+**Next up, I am developing the main application where users can interact with news, updates, and trending topics in the software development industry. Stay tuned for more! 🚀**
 
 
