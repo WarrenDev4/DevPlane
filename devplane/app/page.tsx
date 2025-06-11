@@ -25,7 +25,7 @@ export default function LandingPage() {
           <div className="hero-text">
             <h1 className="fade-in-up" style={{ animationDelay: '0.2s' }}>Empowering developers to be the best they can be.</h1>
             <p className="fade-in-up" style={{ animationDelay: '0.4s' }}>Stay ahead with the latest in tech and development and connect with other developers with DevPlane.</p>
-            <Link href="/main-page" className="fade-in-up explore-button" style={{ animationDelay: '0.6s' }}>Explore Now</Link>
+            <Link href="/home" className="fade-in-up explore-button" style={{ animationDelay: '0.6s' }}>Explore Now</Link>
           </div>
         </div>
       </section>

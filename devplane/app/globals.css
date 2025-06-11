@@ -9,7 +9,7 @@ html, body {
 .pageWrapper {
   height: 100vh;
   width: 100%;
-  background: linear-gradient(to bottom right, #1c1c1c, #1c1e1f);
+  background: #ffffff; 
   position: relative;
   display: flex;
   flex-direction: column;
@@ -68,5 +68,18 @@ html, body {
 
 .nav .signup-button:hover {
   background-color: #185bb4;
+}
+
+.pageSection {
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
 }
 

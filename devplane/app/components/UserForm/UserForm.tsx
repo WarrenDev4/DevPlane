@@ -31,10 +31,10 @@ export default function UserForm({ type }: { type: 'login' | 'signup' }) {
         await updateProfile(userCredential.user, {
           displayName: `${formData.firstName} ${formData.lastName}`,
         });
-        router.push('/main-page'); 
+        router.push('/home'); 
       } else {
         await signInWithEmailAndPassword(auth, formData.email, formData.password);
-        router.push('main-page');
+        router.push('home');
       }
     } catch (err: any) {
       console.error(err);

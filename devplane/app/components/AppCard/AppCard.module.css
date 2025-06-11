@@ -1,0 +1,121 @@
+.container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  width: 100vw;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.sidebar {
+  width: 239px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #1f2028;
+  padding: 24px;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #f1f1f1;
+}
+
+.sidebar > a {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0;
+}
+
+.navLinks a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.navLinks a svg,
+.navLinks a img {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  opacity: 0.8;
+}
+
+.navLinks a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navLinks a.active {
+  background-color: rgba(26, 144, 255, 0.2);
+  color: #1a90ff;
+}
+
+.navLinks a.active svg,
+.navLinks a.active img {
+  opacity: 1;
+}
+
+.authButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: auto; 
+  padding-top: 1rem;
+}
+
+.loginLink, .signUpLink {
+  padding: 8px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  border-radius: 9px;
+  font-weight: 500; 
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.loginLink {
+  background: linear-gradient(to right, #1a90ff, #1e8be5);
+}
+
+.signUpLink {
+  background: linear-gradient(to right, #1a1c24, #0f121c);
+}
+
+.loginLink:hover {
+  background: #329ef7;
+}
+
+.signUpLink:hover {
+  background: #151823;
+}
+
+.newsFeed {
+  flex: 2;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #fff;
+}
+
+.quickFeed {
+  width: 300px;
+  background: #fff;
+  padding: 20px;
+  border-left: 1px solid #ddd;
+  overflow-y: auto;
+}
