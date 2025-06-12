@@ -10,10 +10,6 @@ export async function fetchHackerNewsArticle(id: number): Promise<any> {
   return res.json();
 }
 
-/**
- * Fetches the top N Hacker News articles that include a valid URL.
- * Stops once it reaches the desired count.
- */
 export async function fetchTopHackerNewsArticles(limit: number = 35): Promise<{
   title: string;
   link: string;

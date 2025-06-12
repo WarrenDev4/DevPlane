@@ -1,16 +1,22 @@
-.feedWrapper {
-  padding: 32px;
+.updatesContainer {
+  width: 100%;
+  max-width: 360px;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(77, 77, 77, 0.05);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0px 3px rgba(0, 0, 0, 0.3);
   overflow-y: scroll;
-  height: 100vh;
-  animation: fadeIn 0.6s ease-in;
 }
 
-.feedWrapper::-webkit-scrollbar {
+.updatesContainer::-webkit-scrollbar {
   display: none;
 }
 
-.feedWrapper {
+.updatesContainer {
   -ms-overflow-style: none; 
   scrollbar-width: none; 
 }
@@ -19,7 +25,6 @@
   font-size: 28px;
   font-weight: 500;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  margin-bottom: 0;
   padding: 24px;
   background-color: #ffffff;
   color: #28292a;
@@ -27,113 +32,152 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
-  animation: slideIn 0.6s ease forwards;
-  opacity: 0;
+  border-bottom: 1px solid #f1f1f1;
 }
 
-.header::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100vw; 
-  height: 1px;
-  background-color: #f1f1f1;
-  transform: translateX(-24px);
-}
-
-.feedContainer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 32px 24px;
-  background-color: #ffffff; 
-  min-height: 100vh;
-  box-sizing: border-box;
-  animation: fadeInUp 0.8s ease forwards;
+.updateFeed {
+  display: flex;
+  flex-direction: column;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding: 12px 16px;
+  gap: 0;
   overflow-y: auto;
 }
 
-
-.card {
-  background-color: #f6f6f6;
-  border-radius: 10px;
+.updateFeedSingle {
+  height: 60px;
   overflow: hidden;
   display: flex;
+  align-items: center;
+}
+
+.updateFeedScroll {
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: 10px;
+  display: flex;
   flex-direction: column;
-  height: 280px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  transition: transform 0.2s ease;
+  gap: 8px;
+}
+
+
+.updateFeedScroll::-webkit-scrollbar {
+  display: none;
+}
+
+.updatesFeedScroll {
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+.updateItem {
+  opacity: 0; /* Start hidden */
+  transform: translateY(10px);
+  animation: fadeInAnim 0.4s ease-out forwards;
+
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
   text-decoration: none;
-  color: inherit;
+  color: #111;
+  cursor: pointer;
+  user-select: none;
 }
 
-.card:hover {
-  transform: translateY(-4px);
+
+.updateItem:hover {
+  background: #f5f5f5;
 }
 
-.thumbnail {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  image-rendering:optimizeQuality;       
-  display: block;     
+.favicon {
+   width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  flex-shrink: 0;
 }
 
 .cardContent {
-  padding: 10px 14px;
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #ffffff;
+  flex-grow: 1;
+  size: 20px;
 }
 
-.cardContent h3 {
+.title {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  margin: 0 0 4px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #000000;
-  line-height: 1.3;
-}
-
-.cardContent p {
-  font-size: 12px;
-  color: #aaa;
-  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #1a1a1a;
 }
 
 .source {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 0.85rem;
-  color: #888;
-  margin-top: 4px;
+  font-size: 0.85rem; 
+  color: #777;
+  margin-top: 2px;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.divider {
+  height: 1px;
+  background-color: #e0e0e0;
+  width: 100%;
+  margin: 0;
 }
 
-@keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.loadingMessage {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding: 16px;
+  color: #777;
+  font-size: 0.9rem;
 }
 
-@keyframes fadeInUp {
-  0% {
+
+.animateIn {
+  animation: slideInUp 0.6s ease-in-out;
+}
+
+
+@keyframes fadeInAnim {
+  from {
     opacity: 0;
     transform: translateY(10px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes fadeOutAnim {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fadeInContainer {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeIn {
+  animation: fadeInContainer 0.6s ease-out forwards;
+}
+
+.fadeOut {
+  animation: fadeOutAnim 0.5s ease forwards;
 }

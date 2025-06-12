@@ -1,4 +1,3 @@
-// lib/api/devto.ts
 export async function fetchDevToArticles() {
   const res = await fetch('https://dev.to/api/articles?top=30', {
     next: { revalidate: 86400 }, 
@@ -6,7 +5,6 @@ export async function fetchDevToArticles() {
   return res.json();
 }
 
-// types/devto.d.ts (or inside NewsFeed.tsx)
 export interface DevToArticle {
   id: number;
   title: string;
