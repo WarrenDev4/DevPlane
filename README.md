@@ -23,10 +23,12 @@ This is the landing page that users will enter once starting the platform.
 This is where users can sign up for DevPlane.
 ![DevPlane Sign Up](https://github.com/user-attachments/assets/ca9ae2ef-11e7-4aaf-aec6-14afe83ac94d)
 
-This where users can login into their pages.
+**This where users can login into their pages.**
 ![DevPlane Sign In](https://github.com/user-attachments/assets/88143694-1e07-4152-82e6-03094d729f8a)
 
+**DevPlane Home Page (Sample data shown. No real data has been generated yet).**
+![DevPlane Home Page](https://github.com/user-attachments/assets/a0a4f0c7-09bc-41a6-b926-647e7164f06d)
 
-**Next up, I am developing the main application where users can interact with news, updates, and trending topics in the software development industry. Stay tuned for more! 🚀**
+**Stay tuned for more updates! 🚀**
 
 
