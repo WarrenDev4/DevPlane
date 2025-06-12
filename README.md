@@ -27,7 +27,7 @@ This is where users can sign up for DevPlane.
 ![DevPlane Sign In](https://github.com/user-attachments/assets/88143694-1e07-4152-82e6-03094d729f8a)
 
 **DevPlane Home Page (Sample data shown. No real data has been generated yet).**
-![DevPlane Home Page](https://github.com/user-attachments/assets/a0a4f0c7-09bc-41a6-b926-647e7164f06d)
+![DevPlane Home Page](https://github.com/user-attachments/assets/3fcdb12c-a0e6-47ff-8692-4cb196bcdd57)
 
 **Stay tuned for more updates! 🚀**
 
