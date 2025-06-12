@@ -26,8 +26,11 @@ This is where users can sign up for DevPlane.
 **This where users can login into their pages.**
 ![DevPlane Sign In](https://github.com/user-attachments/assets/88143694-1e07-4152-82e6-03094d729f8a)
 
-**DevPlane Home Page (Sample data shown. No real data has been generated yet).**
-![DevPlane Home Page](https://github.com/user-attachments/assets/3fcdb12c-a0e6-47ff-8692-4cb196bcdd57)
+**DevPlane Home Page. (I do not own rights to any of the news content generated and all copyrighted material is owned by their respective owners).**
+
+On the DevPlane Home Page is where users can stay up to date with developer news and updates with articles with Dev.to, and news from Hacker news. I utilized the Dev.to and HackerNews public APIs in order to generate news articles in real time for users.
+![DevPlane Complete Homepage](https://github.com/user-attachments/assets/509a3918-e39f-4d39-93d8-2ef0a77956e9)
+
 
 **Stay tuned for more updates! 🚀**
 
