@@ -9,6 +9,9 @@ export default async function ArticleFeed() {
   return (
     <div className={styles.feedWrapper}>
       <h2 className={styles.header}>Article Feed</h2>
+      <p className={styles.description}>
+        Curated articles from the developer community on Dev.to.
+      </p>
       <div className={styles.feedContainer}>
         {articles.slice(0, 9).map((article: any) => (
           <a

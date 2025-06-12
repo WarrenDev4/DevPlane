@@ -84,6 +84,9 @@ export default function NewsFeed() {
   return (
   <div className={styles.updatesContainer}>
     <div className={styles.header}>News Feed</div>
+    <div className={styles.description}>
+      Stay updated with the latest news from Hacker News.
+    </div>
     <div className={styles.updateFeedScroll}>
       {displayedUpdates.length === 0 ? (
         <div className={styles.loadingMessage}>Loading feed...</div>
