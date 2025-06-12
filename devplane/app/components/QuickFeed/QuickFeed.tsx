@@ -1,25 +1,51 @@
-import styles from './QuickFeed.module.css';
+'use client';
 
-const updates = [
-  {
-    title: "React 19 Beta Released",
-    link: "https://reactjs.org/blog/2024/05/14/react-19-beta.html",
-    source: "reactjs.org",
-  },
-  {
-    title: "Next.js 15 Released",
-    link: "https://nextjs.org/blog/next-15",
-    source: "nextjs.org",
-  },
-];
+import { useEffect, useState } from "react";
+import styles from "./QuickFeed.module.css";
+import { fetchTopHackerNewsArticles } from "@/lib/api/hackernews";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
+
+type FeedItem = {
+  title: string;
+  link: string;
+  source: string;
+};
 
 export default function QuickFeed() {
+  const [updates, setUpdates] = useState<FeedItem[]>([]);
+
+  useEffect(() => {
+    const loadArticles = async () => {
+      try {
+        const articles = await fetchTopHackerNewsArticles(35);
+        setUpdates(articles);
+      } catch (err) {
+        console.error("Error loading Hacker News articles:", err);
+      }
+    };
+
+    loadArticles();
+  }, []);
+
+  useEffect(() => {
+    if (updates.length === 0) return;
+
+    const interval = setInterval(() => {
+      setUpdates((prev) => {
+        const next = [...prev.slice(1), prev[0]]; 
+        return next;
+      });
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [updates]);
+
   return (
     <div className={styles.updatesContainer}>
       <div className={styles.header}>Quick Feed</div>
-      <div className={styles.updateFeed}>
+      <div className={styles.updateFeedScroll}>
         {updates.map((item, index) => (
-          <div key={index}>
+          <div key={index} className={styles.animatedUpdate}>
             <a
               href={item.link}
               target="_blank"
@@ -36,7 +62,6 @@ export default function QuickFeed() {
                 <span className={styles.source}>{item.source}</span>
               </div>
             </a>
-            {index < updates.length - 1 && <div className={styles.divider} />}
           </div>
         ))}
       </div>
