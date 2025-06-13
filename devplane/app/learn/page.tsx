@@ -9,7 +9,7 @@ export default function Learn() {
                 <section className="pageSection">
                     <div className="overlay">
                         <Learning />
-                        </div>
+                    </div>
             </section>
         </div>
     );

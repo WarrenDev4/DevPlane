@@ -23,13 +23,13 @@ export default function TrendingDashboard() {
         <div className={styles.grid}>
           {articles.map((article: any) => (
             <div key={article.id} className={styles.card}>
-              <img src={article.imageUrl} alt={article.title} className={styles.cardImage} />
-              <div className={styles.cardContent}>
-                <span className={styles.cardTag}>#{article.tag || 'General'}</span>
-                <h3 className={styles.cardTitle}>{article.title}</h3>
-                <p className={styles.cardDescription}>{article.description}</p>
-              </div>
-            </div>
+                <img src={article.imageUrl} alt={article.title} className={styles.cardImage} />
+                <div className={styles.cardContent}>
+                    <span className={styles.cardTag}>#{article.tag || 'General'}</span>
+                    <h3 className={styles.cardTitle}>{article.title}</h3>
+                    <p className={styles.cardDescription}>{article.description}</p>
+                </div>
+                </div>
           ))}
         </div>
       </section>
