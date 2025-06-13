@@ -1,14 +1,14 @@
 import React from 'react';
-import ExploreScreen from '../components/ExploreScreen/ExploreScreen';
+import Learning from '../components/Learning/Learning';
 
-export default function Explore() {
+export default function Learn() {
     return (
         <div className="pageWrapper">
             <header className="backgroundNavbar">
              </header>
                 <section className="pageSection">
                     <div className="overlay">
-                            <ExploreScreen />
+                        <Learning />
                         </div>
             </section>
         </div>

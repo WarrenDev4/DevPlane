@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  width: 100vw;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
