@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import styles from "./NewsFeed.module.css";
-import { fetchTopHackerNewsArticles } from "@/lib/api/hackernews";
+import { fetchTopHackerNewsArticles } from "../../../lib/fetchHackerNews";
 
 type FeedItem = {
   title: string;
@@ -46,18 +46,21 @@ export default function NewsFeed() {
     return () => clearInterval(interval);
   }, [allUpdates, currentIndex]);
 
+
   useEffect(() => {
   async function load() {
     try {
-      const articles = await fetchTopHackerNewsArticles(100);
+      const res = await fetch('/api/hackernews');
+      if (!res.ok) throw new Error('Failed to fetch Hacker News');
+      const articles: FeedItem[] = await res.json();
 
+      // your keyword filtering logic here...
       const keywords = [
         "javascript", "react", "python", "coding", "programming",
         "developer", "software", "web", "api", "github", "open source",
         "typescript", "node.js", "backend", "frontend", "framework",
         "cloud", "devops", "ai", "machine learning", "data science",
       ];
-
       const filtered = articles.filter(article =>
         keywords.some(keyword =>
           article.title.toLowerCase().includes(keyword)
@@ -78,6 +81,7 @@ export default function NewsFeed() {
       console.error(err);
     }
   }
+
   load();
 }, []);
 

@@ -1,10 +1,11 @@
 import styles from './ArticleFeed.module.css';
-import { fetchDevToArticles } from '../../../lib/api/devto';
-
-export const revalidate = 86400;
 
 export default async function ArticleFeed() {
-  const articles = await fetchDevToArticles();
+  const res = await fetch('https://dev.to/api/articles?per_page=30&sort_by=latest', {
+      next: { revalidate: 86400 }, 
+    });
+
+  const articles = await res.json();
 
   return (
     <div className={styles.feedWrapper}>
@@ -15,11 +16,11 @@ export default async function ArticleFeed() {
       <div className={styles.feedContainer}>
         {articles.slice(0, 9).map((article: any) => (
           <a
+            key={article.id}
             href={article.url}
             target="_blank"
             rel="noopener noreferrer"
             className={styles.card}
-            key={article.id}
           >
             <img
               src={article.social_image}

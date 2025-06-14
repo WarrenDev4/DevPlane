@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import styles from './LearnDashboard.module.css';
-import { fetchFreeCodeCampArticles } from '../../../lib/api/fetchFreeCodeCamp'; 
 
 const categories = [
   'Programming',
@@ -13,41 +12,45 @@ const categories = [
   'Best Practices',
 ];
 
-export default function LearnDashboard() {
-  type Article = {
-    id: number;
-    title: string;
-    url: string;
-    description: string;
-    source: string;
-    category: string;
-  };
+type Article = {
+  id: string | number;
+  title: string;
+  url: string;
+  description: string;
+  source: string;
+  category: string;
+};
 
+export default function LearnDashboard() {
   const [selectedCategory, setSelectedCategory] = useState('Programming');
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    async function fetchArticles() {
-      try {
-        setLoading(true);
-        setError(null)
-        const allArticles = await fetchFreeCodeCampArticles();
+useEffect(() => {
+  async function fetchArticles() {
+    try {
+      setLoading(true);
+      setError(null);
 
-        const filtered = allArticles.filter(
-          (article: Article) => article.category === selectedCategory
-        );
-        setArticles(filtered);
-      } catch (err) {
-        setError('Something went wrong while loading content.');
-      } finally {
-        setLoading(false);
-      }
+      const res = await fetch('/api/freecodecamp');
+      if (!res.ok) throw new Error('Failed to fetch articles');
+      const allArticles = await res.json();
+
+      const filtered = allArticles.filter(
+        (article: Article) => article.category === selectedCategory
+      );
+      setArticles(filtered);
+    } catch (err) {
+      setError('Something went wrong while loading content.');
+    } finally {
+      setLoading(false);
     }
+  }
 
-    fetchArticles();
-  }, [selectedCategory]);
+  fetchArticles();
+}, [selectedCategory]);
+
 
   return (
     <main className={styles.learnWrapper}>
