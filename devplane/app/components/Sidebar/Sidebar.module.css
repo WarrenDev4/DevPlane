@@ -94,3 +94,64 @@
 .signUpLink:hover {
   background: #151823;
 }
+
+.userSection {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profileLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.profilePic {
+  width: 36px; 
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 8px;
+
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  transform: scale(1);
+}
+
+
+.settingsLink,
+.logoutButton {
+  display: block;           
+  width: 100%;             
+  margin: 8px 0;           
+  padding: 8px 0;          
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  border-radius: 9px;
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  background: linear-gradient(to right, #566878, #364049);
+}
+
+.logoutButton {
+  background: linear-gradient(to right, #1a1c24, #0f121c);
+}
+
+
+.settingsLink:hover {
+  background: #8fa6ba;
+  color: white;
+}
+
+.logoutButton:hover {
+  background: #151823;
+  color: white;
+}

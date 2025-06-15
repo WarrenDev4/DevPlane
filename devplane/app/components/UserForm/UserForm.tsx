@@ -5,6 +5,9 @@ import styles from './UserForm.module.css';
 import { auth } from '@/lib/firebase';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
+import { sendEmailVerification } from 'firebase/auth';
+import { doc, setDoc } from 'firebase/firestore';
+import { db } from '@/lib/firebase';
 
 export default function UserForm({ type }: { type: 'login' | 'signup' }) {
   const [formData, setFormData] = useState({
@@ -20,27 +23,42 @@ export default function UserForm({ type }: { type: 'login' | 'signup' }) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+const actionCodeSettings = {
+  url: 'https://yourdomain.com/confirm-email',  
+  handleCodeInApp: true,
+};
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError(null);
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setError(null);
 
-    try {
-      if (type === 'signup') {
-        const userCredential = await createUserWithEmailAndPassword(auth, formData.email, formData.password);
-        await updateProfile(userCredential.user, {
-          displayName: `${formData.firstName} ${formData.lastName}`,
-        });
-        router.push('/home'); 
-      } else {
-        await signInWithEmailAndPassword(auth, formData.email, formData.password);
-        router.push('home');
-      }
-    } catch (err: any) {
-      console.error(err);
-      setError(err.message || 'Authentication failed');
+  try {
+        if (type === 'signup') {
+      const userCredential = await createUserWithEmailAndPassword(auth, formData.email, formData.password);
+      const user = userCredential.user;
+
+      await updateProfile(user, {
+        displayName: `${formData.firstName} ${formData.lastName}`,
+      });
+
+      await setDoc(doc(db, "users", user.uid), {
+        uid: user.uid,
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        createdAt: new Date(),
+      });
+
+      router.push('/setup-profile');
+      return;
     }
-  };
+
+  } catch (err: any) {
+    console.error('Auth error:', err);
+    setError(err.message || 'Authentication failed');
+  }
+};
+
 
   return (
     <div className={styles.authContainer}>
