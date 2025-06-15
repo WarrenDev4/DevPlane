@@ -86,7 +86,7 @@ export default function Sidebar() {
       </Link>
 
       <div className={styles.navLinks}>
-        {/* Default Nav Links */}
+        {/* Nav Links (Signed Out) */}
         {navItems.map(({ href, label, icon }) => (
           <Link key={href} href={href} className={pathname === href ? styles.active : ''}>
             <span style={{ marginRight: '10px', display: 'inline-block', width: '20px' }}>
@@ -96,7 +96,7 @@ export default function Sidebar() {
           </Link>
         ))}
 
-        {/* User-only Links */}
+        {/* Nav Links (Signed In) */}
         {user && profile && (
           <>
             <Link href="/foryou" className={pathname === '/foryou' ? styles.active : ''}>
@@ -139,7 +139,7 @@ export default function Sidebar() {
         )}
       </div>
 
-      {/* Auth Section */}
+      {/* Login/Signup / Settings/Logout Section */}
       {user && profile ? (
         <div className={styles.userSection}>
           <Link href="/profile" className={styles.profileLink}>
