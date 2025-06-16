@@ -1,14 +1,14 @@
 import React from 'react';
-import NotificationsFeed from '../components/NotificationsFeed/NotificationsFeed';
+import MessagePage from '../components/MessagePage/MessagePage';
 
-export default function Notifications() {
+export default function Messages() {
     return (
         <div className="pageWrapper">
             <header className="backgroundNavbar">
              </header>
                 <section className="pageSection">
                     <div className="overlay">
-                            <NotificationsFeed />
+                            <MessagePage />
                         </div>
             </section>
         </div>
