@@ -1,16 +1,11 @@
 import React from 'react';
 import CommunityPage from '../../app/components/CommunityPage/CommunityPage';
+import Layout from '../components/Layout/Layout';
 
 export default function Profile() {
     return (
-        <div className="pageWrapper">
-            <header className="backgroundNavbar">
-            </header>
-            <section className="pageSection">
-                <div className="overlay">
-                    <CommunityPage />
-                </div>
-            </section>
-        </div>
+    <Layout>
+        <CommunityPage />
+    </Layout> 
     );
 }

@@ -1,16 +1,11 @@
 import React from 'react';
 import MessagePage from '../components/MessagePage/MessagePage';
+import Layout from '../components/Layout/Layout';
 
 export default function Messages() {
     return (
-        <div className="pageWrapper">
-            <header className="backgroundNavbar">
-             </header>
-                <section className="pageSection">
-                    <div className="overlay">
-                            <MessagePage />
-                        </div>
-            </section>
-        </div>
+        <Layout>
+            <MessagePage />
+        </Layout>    
     );
 }

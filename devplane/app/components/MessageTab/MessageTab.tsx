@@ -8,13 +8,18 @@ type User = {
   name: string;
 };
 
-
 export default function MessageTab() {
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
+  const [message, setMessage] = useState('');
+
+  const handleSendMessage = () => {
+    if (!message.trim()) return;
+    console.log("Sending:", message);
+    setMessage('');
+  };
 
   return (
     <main className={styles.pageWrapper}>
-
       <header className={styles.header}>
         <h2>Messages</h2>
       </header>
@@ -22,11 +27,15 @@ export default function MessageTab() {
       <div className={styles.wrapper}>
         <div className={styles.sidebar}>
           <div className={styles.menuHeader}>
-            <h3 className={styles.userLabel}>Your Inbox</h3>
-            <button className={styles.newMessageButton} onClick={() => setSelectedUser({ id: 'new', name: 'New User' })}>
+            <h3 className={styles.userLabel}>Chat</h3>
+            <button
+              className={styles.newMessageButton}
+              onClick={() => setSelectedUser({ id: 'new', name: 'New User' })}
+            >
               + New
             </button>
           </div>
+          
           <div className={styles.searchSection}>
             <input
               type="text"
@@ -34,23 +43,41 @@ export default function MessageTab() {
               className={styles.searchInput}
             />
           </div>
-          <div className={styles.messageList}>
-            <div className={styles.messageItem}>Jane Doe</div>
-            <div className={styles.messageItem}>John Smith</div>
-            <div className={styles.messageItem}>Another User</div>
-          </div>
         </div>
+
         <div className={styles.chatArea}>
           {selectedUser ? (
-            <div className={styles.chatContent}>
-              <h4 className={styles.chatTitle}>Start a conversation</h4>
-              <textarea
-                className={styles.messageInput}
-                placeholder="Write your message..."
-                rows={4}
-              />
-              <button className={styles.sendButton}>Send</button>
-            </div>
+            <>
+              <div className={styles.chatHeader}>{selectedUser.name}</div>
+
+              <div className={styles.messages}>
+                <div className={`${styles.messageBubble} ${styles.incoming}`}>
+                  Hi there! 👋
+                </div>
+                <div className={`${styles.messageBubble} ${styles.outgoing}`}>
+                  Hello! How can I help?
+                </div>
+              </div>
+
+              <div className={styles.messageInputWrapper}>
+                <button className={styles.iconButton}>😊</button>
+                <button className={styles.iconButton}>📎</button>
+                <textarea
+                  className={styles.messageInput}
+                  placeholder="Text message"
+                  rows={1}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                      e.preventDefault();
+                      handleSendMessage();
+                    }
+                  }}
+                />
+                <button className={styles.sendButton}>➤</button>
+              </div>
+            </>
           ) : (
             <div className={styles.emptyState}>
               <p>Select or start a conversation to begin messaging.</p>

@@ -1,16 +1,11 @@
 import React from 'react';
 import NotificationsFeed from '../components/NotificationsFeed/NotificationsFeed';
+import Layout from '../components/Layout/Layout';
 
 export default function Notifications() {
     return (
-        <div className="pageWrapper">
-            <header className="backgroundNavbar">
-             </header>
-                <section className="pageSection">
-                    <div className="overlay">
-                            <NotificationsFeed />
-                        </div>
-            </section>
-        </div>
+    <Layout>
+        <NotificationsFeed />
+    </Layout>             
     );
 }

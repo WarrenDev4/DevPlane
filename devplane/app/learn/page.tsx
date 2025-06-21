@@ -1,16 +1,11 @@
 import React from 'react';
+import Layout from '../components/Layout/Layout';
 import Learning from '../components/Learning/Learning';
 
 export default function Learn() {
     return (
-        <div className="pageWrapper">
-            <header className="backgroundNavbar">
-             </header>
-                <section className="pageSection">
-                    <div className="overlay">
-                        <Learning />
-                    </div>
-            </section>
-        </div>
+        <Layout>
+            <Learning />
+        </Layout>       
     );
 }

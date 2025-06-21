@@ -78,7 +78,7 @@
 }
 
 .updateItem {
-  opacity: 0; /* Start hidden */
+  opacity: 0;
   transform: translateY(10px);
   animation: fadeInAnim 0.4s ease-out forwards;
 

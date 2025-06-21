@@ -1,3 +1,4 @@
+/* Layout */
 .pageWrapper {
   display: flex;
   flex-direction: column;
@@ -8,6 +9,13 @@
   animation: fadeIn 0.4s ease-in;
 }
 
+.wrapper {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Header */
 .header {
   margin-top: 15px;
   margin-left: 22px;
@@ -28,19 +36,13 @@
   text-align: left;
 }
 
-/* --- Message Layout Below --- */
-
-.wrapper {
-  display: flex;
-  flex-grow: 1;
-  overflow: hidden;
-}
-
+/* Sidebar */
 .sidebar {
-  width: 350px;
-  border-right: 1px solid #ddd;
-  background-color: #fff;
-  padding: 20px;
+  width: 300px;
+  background-color: #fff; 
+  padding: 12px;
+  color: black;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   display: flex;
   flex-direction: column;
 }
@@ -49,107 +51,147 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
 .userLabel {
-  font-size: 20px;
-  font-weight: 600;
-  color: #1e1e1e;
+  margin: 0;
+  font-size: 18px;
 }
 
 .newMessageButton {
-  background: linear-gradient(to right, #1a90ff, #1e8be5);
-  color: #fff;
-  padding: 6px 12px;
+  background-color: #1a73e8;
+  color: white;
   border: none;
-  border-radius: 8px;
-  font-weight: 500;
+  border-radius: 4px;
+  padding: 6px 12px;
   cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.newMessageButton:hover {
-  background: #329ef7;
 }
 
 .searchSection {
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
 .searchInput {
-  width: 100%;
-  padding: 10px 14px;
-  border-radius: 22px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-  background: #fafafa;
-}
-
-.messageList {
-  flex-grow: 1;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  width: 85%;
+  padding: 8px 12px;
+  border-radius: 14px;
+  border: none;
+  background-color: #e1e6ef;
+  color: white;
 }
 
 .messageItem {
   padding: 10px;
-  background: #f0f0f0;
-  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.2s ease;
+  background-color: transparent;
+  transition: background 0.3s;
 }
 
 .messageItem:hover {
-  background: #e0e0e0;
+  background-color: #3a3b3c;
 }
 
+/* Chat Area */
 .chatArea {
-  flex-grow: 1;
-  padding: 30px;
-  background-color: #fff;
+  flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--background-dark);
 }
 
-.chatContent {
-  width: 100%;
-  max-width: 500px;
-  text-align: left;
-}
-
-.chatTitle {
+.chatHeader {
+  background-color: #2f60d3;
+  color: white;
+  padding: 12px 16px;
   font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 15px;
-  color: #1e1e1e;
+  font-weight: bold;
 }
 
-.messageInput {
-  width: 100%;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  resize: none;
-  margin-bottom: 10px;
-  font-size: 14px;
-}
-
-.sendButton {
-  background: #1a90ff;
-  color: #fff;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 500;
+.messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .emptyState {
-  color: #999;
-  font-size: 16px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #888888;
+}
+
+/* Message Bubbles */
+.messageBubble {
+  max-width: 60%;
+  padding: 10px 14px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.incoming {
+  background-color: var(--message-incoming);
+  color: white;
+  align-self: flex-start;
+  border-bottom-left-radius: 0;
+}
+
+.outgoing {
+  background-color: var(--message-outgoing);
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 0;
+}
+
+/* Input Area */
+.messageInputWrapper {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background-color: #e1e6ef;
+  gap: 8px;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+}
+
+.messageInput {
+  flex: 1;
+  background: #ffffff;
+  border: none;
+  border-radius: 18px;
+  padding: 10px 14px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #000000;
+  resize: none;
+  outline: none;
+  font-size: 15px;
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.sendButton {
+  background-color: #1a73e8;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
+  font-size: 18px;
 }

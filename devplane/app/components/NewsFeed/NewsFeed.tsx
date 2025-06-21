@@ -53,8 +53,6 @@ export default function NewsFeed() {
       const res = await fetch('/api/hackernews');
       if (!res.ok) throw new Error('Failed to fetch Hacker News');
       const articles: FeedItem[] = await res.json();
-
-      // your keyword filtering logic here...
       const keywords = [
         "javascript", "react", "python", "coding", "programming",
         "developer", "software", "web", "api", "github", "open source",

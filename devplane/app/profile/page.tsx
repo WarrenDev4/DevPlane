@@ -1,16 +1,11 @@
 import React from 'react';
 import ProfilePage from '../../app/components/ProfilePage/ProfilePage';
+import Layout from '../components/Layout/Layout';
 
 export default function Profile() {
     return (
-        <div className="pageWrapper">
-            <header className="backgroundNavbar">
-            </header>
-            <section className="pageSection">
-                <div className="overlay">
-                    <ProfilePage />
-                </div>
-            </section>
-        </div>
+        <Layout>
+            <ProfilePage />
+        </Layout>      
     );
 }
