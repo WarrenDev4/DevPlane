@@ -1,7 +1,7 @@
 ![DevPlane Logo](https://github.com/user-attachments/assets/36608ffb-7d1d-4c2e-bc3b-936c281a6389)
-DevPlane is an  upcoming developer platform that will aim to keep software developers informed, relevant, and up-to-date in a fast-changing tech landscape. It will delivers curated and customizable tech news, highlights trending tools and frameworks, and offers AI-enhanced features, learning resources, and community interactions.
+DevPlane is an upcoming AI-powered platform that will empower software developers and engineers in a fast-changing tech landscape. The platform will utilize AI-integration to provide enhanced features that will deliver curated industry news, trending technologies, and provide access to learning resources, and community interactions for continuous learning and networking.
 
-With the software development industry changing and evolving everyday at a rapid pace, DevPlane aims to empower developers by helping them stay updated with industry news, explore new technologies, and connect with the developer community.
+With the software development industry changing and evolving everyday at a rapid pace, DevPlane aims to utilize AI as a tool to empower developers by strengthening them to be the best engineers that they can be and connecting them in a centralized platform.
 
 **Tools being used for this project:**
 
